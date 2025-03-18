@@ -17,7 +17,7 @@ namespace TN01_WFCadastro_novo
             InitializeComponent();
         }
 
-           
+
         private void lbl_login_Click(object sender, EventArgs e)
         {
 
@@ -25,17 +25,14 @@ namespace TN01_WFCadastro_novo
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-           int codigo = 1;
-
             Usuario usuario = new Usuario();
             usuario.Login = txt_login.Text;
             usuario.Senha = txt_senha.Text;
             usuario.DataCadastro = DateTime.Now;
-            usuario.Codigo = codigo;
+            usuario.Codigo = Usuario.ListaUsuarios.Count;
 
             if (txt_confirmasenha.Text == txt_senha.Text)
             {
-                codigo = codigo + 1;
                 Usuario.ListaUsuarios.Add(usuario);
                 MessageBox.Show("Cadastrado com sucesso");
 
@@ -45,6 +42,11 @@ namespace TN01_WFCadastro_novo
                 MessageBox.Show("Senhas incompativeis. Tente novamente", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+
+        }
+
+        private void FormCadastro_Load(object sender, EventArgs e)
+        {
 
         }
     }

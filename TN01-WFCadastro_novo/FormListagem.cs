@@ -24,7 +24,8 @@ namespace TN01_WFCadastro_novo
 
         private void FormListagem_Load(object sender, EventArgs e)
         {
-            dgv_lista.Rows.Add
+            dgv_lista.DataSource = Usuario.ListaUsuarios;
+
         }
     }
 }
