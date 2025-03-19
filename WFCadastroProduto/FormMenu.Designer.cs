@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             menuStrip1 = new MenuStrip();
             mnu_cadastrar = new ToolStripMenuItem();
+            mnu_produto = new ToolStripMenuItem();
+            mnu_usuario = new ToolStripMenuItem();
             mnu_lista = new ToolStripMenuItem();
             mnu_sair = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
@@ -49,10 +51,24 @@
             // 
             // mnu_cadastrar
             // 
+            mnu_cadastrar.DropDownItems.AddRange(new ToolStripItem[] { mnu_produto, mnu_usuario });
             mnu_cadastrar.Name = "mnu_cadastrar";
             mnu_cadastrar.Size = new Size(69, 20);
             mnu_cadastrar.Text = "Cadastrar";
             mnu_cadastrar.Click += mnu_cadastrar_Click;
+            // 
+            // mnu_produto
+            // 
+            mnu_produto.Name = "mnu_produto";
+            mnu_produto.Size = new Size(180, 22);
+            mnu_produto.Text = "Produtos";
+            mnu_produto.Click += mnu_produto_Click;
+            // 
+            // mnu_usuario
+            // 
+            mnu_usuario.Name = "mnu_usuario";
+            mnu_usuario.Size = new Size(180, 22);
+            mnu_usuario.Text = "Usuario";
             // 
             // mnu_lista
             // 
@@ -107,5 +123,7 @@
         private ToolStripMenuItem mnu_lista;
         private ToolStripMenuItem mnu_sair;
         private PictureBox pictureBox1;
+        private ToolStripMenuItem mnu_produto;
+        private ToolStripMenuItem mnu_usuario;
     }
 }

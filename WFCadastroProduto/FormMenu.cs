@@ -19,8 +19,6 @@ namespace WFCadastroProduto
 
         private void mnu_cadastrar_Click(object sender, EventArgs e)
         {
-            FormCadastroProduto form = new FormCadastroProduto();
-            form.ShowDialog();
         }
 
         private void mnu_lista_Click(object sender, EventArgs e)
@@ -52,9 +50,24 @@ namespace WFCadastroProduto
 
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-           
 
-            
+            DialogResult resultado = MessageBox.Show("Você quer realmente sair?", "Confirmação",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void mnu_produto_Click(object sender, EventArgs e)
+        {
+            FormCadastroProduto form = new FormCadastroProduto();
+            form.ShowDialog();
         }
     }
 }
