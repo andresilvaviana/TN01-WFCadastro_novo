@@ -91,6 +91,8 @@
             Name = "FormMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicial";
+            FormClosed += FormMenu_FormClosed;
+            Load += FormMenu_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
