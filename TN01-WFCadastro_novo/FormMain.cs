@@ -33,5 +33,10 @@ namespace TN01_WFCadastro_novo
         {
             this.Close();
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
