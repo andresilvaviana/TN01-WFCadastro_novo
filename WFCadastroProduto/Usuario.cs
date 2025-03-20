@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WFCadastroProduto
 {
+    
     public class Usuario
     {
         public Usuario(int codigo, string? login, string? senha, DateTime dtCadastro)
@@ -23,6 +24,18 @@ namespace WFCadastroProduto
 
         public static List<Usuario> ListaUsuarios = new List<Usuario>();
 
+    }
+
+    public enum eCategoria
+    {
+        Açougue = 10,
+        Frioselaticínios = 25,
+        Adegaebebidas = 30,
+        Higieneelimpeza = 35,
+        Hortifrutiemercearia = 40,
+        Padaria = 45,
+        Enlatados = 50,
+        Cereais = 55,
     }
 
     public class Produto

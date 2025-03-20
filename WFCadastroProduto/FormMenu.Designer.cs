@@ -69,6 +69,7 @@
             mnu_usuario.Name = "mnu_usuario";
             mnu_usuario.Size = new Size(180, 22);
             mnu_usuario.Text = "Usuario";
+            mnu_usuario.Click += mnu_usuario_Click;
             // 
             // mnu_lista
             // 
@@ -107,7 +108,7 @@
             Name = "FormMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicial";
-            FormClosed += FormMenu_FormClosed;
+            FormClosing += FormMenu_FormClosing;
             Load += FormMenu_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

@@ -103,11 +103,12 @@
             // 
             cbx_categoria.DropDownStyle = ComboBoxStyle.DropDownList;
             cbx_categoria.FormattingEnabled = true;
-            cbx_categoria.Items.AddRange(new object[] { "Açougue", "Frios e laticínios", "Adega e bebidas", "Higiene e limpeza", "Hortifruti e mercearia", "Padaria", "Enlatados", "Cereais" });
+            cbx_categoria.Items.AddRange(new object[] { "Açougue", "Frios e laticínios", "Adega e bebidas", "Higiene e limpeza", "Hortifruti", "Mercearia", "Padaria", "Enlatados", "Cereais" });
             cbx_categoria.Location = new Point(128, 47);
             cbx_categoria.Name = "cbx_categoria";
             cbx_categoria.Size = new Size(169, 23);
             cbx_categoria.TabIndex = 2;
+            cbx_categoria.SelectedIndexChanged += cbx_categoria_SelectedIndexChanged;
             // 
             // dtp_datavencimento
             // 
@@ -120,7 +121,9 @@
             // nud_preco
             // 
             nud_preco.DecimalPlaces = 2;
+            nud_preco.Increment = new decimal(new int[] { 50, 0, 0, 0 });
             nud_preco.Location = new Point(12, 189);
+            nud_preco.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
             nud_preco.Name = "nud_preco";
             nud_preco.Size = new Size(140, 23);
             nud_preco.TabIndex = 4;
@@ -136,6 +139,7 @@
             // txt_codigo
             // 
             txt_codigo.BorderStyle = BorderStyle.FixedSingle;
+            txt_codigo.Enabled = false;
             txt_codigo.Location = new Point(12, 47);
             txt_codigo.Name = "txt_codigo";
             txt_codigo.Size = new Size(103, 23);
@@ -188,6 +192,7 @@
             Name = "FormCadastroProduto";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Produto";
+            Load += FormCadastroProduto_Load;
             ((System.ComponentModel.ISupportInitialize)nud_preco).EndInit();
             ResumeLayout(false);
             PerformLayout();

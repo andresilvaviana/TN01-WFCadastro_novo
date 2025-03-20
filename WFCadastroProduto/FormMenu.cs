@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,25 +49,28 @@ namespace WFCadastroProduto
 
         }
 
-        private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
+        private void mnu_produto_Click(object sender, EventArgs e)
         {
+            FormCadastroProduto form = new();
+            form.ShowDialog();
+        }
 
+        private void FormMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
             DialogResult resultado = MessageBox.Show("Você quer realmente sair?", "Confirmação",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (resultado == DialogResult.Yes)
+            if (resultado == DialogResult.No)
             {
-                this.Close();
+                e.Cancel = true;
             }
-            else
-            {
-                return;
-            }
+
+
         }
 
-        private void mnu_produto_Click(object sender, EventArgs e)
+        private void mnu_usuario_Click(object sender, EventArgs e)
         {
-            FormCadastroProduto form = new FormCadastroProduto();
+            FormCadastroUsuario form = new();
             form.ShowDialog();
         }
     }

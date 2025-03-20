@@ -32,6 +32,23 @@ namespace WFCadastroProduto
             return;
         }
 
+        public bool CamposNaoPreenchidos()
+        {
+            if (string.IsNullOrEmpty(txt_codigo.Text))
+                return true;
+           // if (cbx_categoria.SelectedIndex == -1)
+            //    return true;
+            if (string.IsNullOrEmpty(txt_nomeproduto.Text))
+                return true;
+            if (nud_preco.Value <= 0)
+                return true;
+            if (dtp_datavencimento.Value == DateTime.Today)
+                return true;
+            if (string.IsNullOrEmpty(rtb_observacao.Text))
+                return true;
+
+            return false;
+        }
 
         private void txt_codigo_TextChanged(object sender, EventArgs e)
         {
@@ -109,6 +126,14 @@ namespace WFCadastroProduto
 
         }
 
-       
+        private void cbx_categoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCadastroProduto_Load(object sender, EventArgs e)
+        {
+            dtp_datavencimento.Value = DateTime.Today;
+        }
     }
 }

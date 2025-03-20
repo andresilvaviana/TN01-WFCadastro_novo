@@ -7,7 +7,7 @@ namespace WFCadastroProduto
             InitializeComponent();
         }
 
-        private void FormLogin_Load(object sender, EventArgs e)
+       public void FormLogin_Load(object sender, EventArgs e)
         {
             Usuario us = new Usuario();
             us.Codigo = 001;
@@ -15,8 +15,7 @@ namespace WFCadastroProduto
             us.Senha = "123456";
             us.DtCadastro = Convert.ToDateTime("18/03/2025 18:30");
             Usuario.ListaUsuarios.Add(us);
-
-        }
+       }
 
         public void Erro(string mensagem)
         {
@@ -52,6 +51,10 @@ namespace WFCadastroProduto
 
                         FormMenu form = new FormMenu();
                         form.ShowDialog();
+                        
+                        //lipa os dados dos componentes
+                        txt_login.Clear();
+                        txt_senha.Clear();
 
                         return;
 
